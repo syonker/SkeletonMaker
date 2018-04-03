@@ -24,15 +24,11 @@ bool Skeleton::Load(const char *file) {
 
 
 	Tokenizer* token = new Tokenizer();
-	//token->Open(file, "skel");
 	token->Open(file);
 	token->FindToken("balljoint");
 	// Parse tree
 	root = new Joint();
 	root->Load(token);
-
-
-
 
 	// Finish
 	token->Close();

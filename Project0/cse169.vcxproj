@@ -25,7 +25,6 @@
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Skeleton.cpp" />
-    <ClCompile Include="SpinningCube.cpp" />
     <ClCompile Include="Tester.cpp" />
     <ClCompile Include="Tokenizer.cpp" />
   </ItemGroup>
@@ -37,7 +36,6 @@
     <ClInclude Include="Model.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="Skeleton.h" />
-    <ClInclude Include="SpinningCube.h" />
     <ClInclude Include="Tester.h" />
     <ClInclude Include="Tokenizer.h" />
   </ItemGroup>

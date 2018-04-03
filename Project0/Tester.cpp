@@ -63,10 +63,8 @@ Tester::Tester(const char *windowTitle,int argc,char **argv) {
 
 	// Initialize components
 	Program=new ShaderProgram("Model.glsl",ShaderProgram::eRender);
-	Cube=new SpinningCube;
 	Cam=new Camera;
 	Cam->SetAspect(float(WinX)/float(WinY));
-
 
 	//Prep Skeletons
 	test = new Skeleton();
@@ -75,7 +73,6 @@ Tester::Tester(const char *windowTitle,int argc,char **argv) {
 	spider = new Skeleton();
 
 	test->Load("");
-	//test->Load("../skeletons/test.skel");
 	wasp->Load("../skeletons/wasp.skel");
 	dragon->Load("../skeletons/dragon.skel");
 	spider->Load("../skeletons/spider.skel");
@@ -93,7 +90,6 @@ Tester::Tester(const char *windowTitle,int argc,char **argv) {
 
 Tester::~Tester() {
 	delete Program;
-	delete Cube;
 	delete Cam;
 
 	glFinish();
@@ -104,7 +100,6 @@ Tester::~Tester() {
 
 void Tester::Update() {
 	// Update the components in the world
-	Cube->Update();
 	Cam->Update();
 
 	// Tell glut to re-display the scene
@@ -118,7 +113,6 @@ void Tester::Reset() {
 	Cam->Reset();
 	Cam->SetAspect(float(WinX)/float(WinY));
 
-	Cube->Reset();
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -128,12 +122,6 @@ void Tester::Draw() {
 	glViewport(0, 0, WinX, WinY);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	// Draw components
-	//Cube->Draw(Cam->GetViewProjectMtx(),Program->GetProgramID());
-
-	//test->Draw(Cam->GetViewProjectMtx(), Program->GetProgramID());
-	//wasp->Draw(Cam->GetViewProjectMtx(), Program->GetProgramID());
-	//dragon->Draw(Cam->GetViewProjectMtx(), Program->GetProgramID());
 	currSkel->Draw(Cam->GetViewProjectMtx(), Program->GetProgramID());
 
 	// Finish drawing scene

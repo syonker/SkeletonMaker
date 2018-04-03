@@ -20,9 +20,6 @@ Joint::Joint()
 	jointDOF.push_back(xDOF);
 	jointDOF.push_back(yDOF);
 	jointDOF.push_back(zDOF);
-	//jointDOF->at(0) = xDOF;
-	//jointDOF->at(1) = xDOF;
-	//jointDOF->at(2) = xDOF;
 
 }
 
@@ -116,11 +113,6 @@ void Joint::Update(glm::mat4 parentW) {
 									glm::vec4(0.0f, 1.0f, 0.0f, 0.0f),
 									glm::vec4(0.0f, 0.0f, 1.0f, 0.0f), 
 									glm::vec4(offset, 1.0f));
-
-	//L = glm::mat4(glm::vec4(cos(y)*cos(z), cos(y)*sin(z), -sin(z), 0.0),
-	//	glm::vec4(sin(x)*sin(y)*cos(z) - cos(x)*sin(z), sin(x)*sin(y)*sin(z) + cos(x)*cos(z), sin(x)*cos(y), 0.0),
-	//	glm::vec4(cos(x)*sin(y)*cos(z) + sin(x)*sin(z), cos(x)*sin(y)*sin(z) - sin(x)*cos(z), cos(x)*cos(y), 0.0),
-	//	glm::vec4(offset, 1.0f));
 
 	L = translate * rotZ * rotY * rotX;
 

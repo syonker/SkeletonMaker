@@ -6,7 +6,6 @@
 
 #include "Shader.h"
 #include "Camera.h"
-#include "SpinningCube.h"
 #include "Skeleton.h"
 #include "Joint.h"
 #include "DOF.h"
@@ -45,7 +44,6 @@ private:
 
 	// Components
 	ShaderProgram *Program;
-	SpinningCube *Cube;
 	Camera *Cam;
 
 	Skeleton* test;
